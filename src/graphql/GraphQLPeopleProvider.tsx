@@ -6,13 +6,11 @@ import client from "./client"
 export interface onlyChildren {
     children: ReactNode
 }
-const GraphQLPeopleProvider = (props: any) => {
-    return (
-        <ApolloProvider client={client}>
-            {props.children}
-        </ApolloProvider>
-    )
-}
+const GraphQLPeopleProvider = (props: any) => (
+    <ApolloProvider client={client}>
+        {props.children}
+    </ApolloProvider>
+)
 
 
 
