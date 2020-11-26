@@ -1,4 +1,4 @@
-import { navigate, useNavigate } from '@reach/router';
+import { useNavigate } from '@reach/router';
 import React, { FormEvent, useMemo } from 'react';
 import { Person } from '../customTypes';
 import { Container, NavigationButton, Plate } from '../elements/Container';
@@ -18,9 +18,9 @@ const UserInfoForm = (props: UserInfoFormProps) => {
     const { state: email, bindings: emailBindings } = useInput(initialValues.email)
     const { state: phone, bindings: phoneBindings } = useInput(initialValues.phone)
     const { state: country, bindings: countryBindings } = useInput(initialValues.country)
-    const { selected: gender, bindings: genderBindings } = useRadioInput(["Male", "Female"], initialValues.gender)
+    const { selected: gender, bindings: genderBindings } = useRadioInput(["M", "F"], initialValues.gender)
 
-    const countries = useMemo(() => ["Pakistan", "Saudia Arabia", "England", "USA"], [])
+    const countries = useMemo(() => ["PAKISTAN", "India", "USA", "China", "UK"], [])
     const _handleFormSubmission = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         handleFormSubmission({
@@ -33,7 +33,7 @@ const UserInfoForm = (props: UserInfoFormProps) => {
     return (
         <Container>
             <Plate>
-                <h1>{action == "EDIT" ? "Edit Person's Information" : "Add new user"}</h1>
+                <h1>{action === "EDIT" ? "Edit Person's Information" : "Add new user"}</h1>
                 <NavigationButton onClick={() => { navigate("/") }}>Go Back</NavigationButton>
             </Plate>
             <Form onSubmit={_handleFormSubmission}>
@@ -46,9 +46,9 @@ const UserInfoForm = (props: UserInfoFormProps) => {
                 <label>Gender:</label>
                 <div className="genderPicker">
                     <label htmlFor="genderMale">Male</label>
-                    <input id="genderMale" type='radio' name='gender' checked={"Male" === gender} value="Male" required {...genderBindings} />
+                    <input id="genderMale" type='radio' name='gender' checked={"M" === gender} value="M" required {...genderBindings} />
                     <label htmlFor="genderFemale">Female</label>
-                    <input id="genderFemale" type='radio' name='gender' checked={"Female" === gender} value="Female" required {...genderBindings} />
+                    <input id="genderFemale" type='radio' name='gender' checked={"F" === gender} value="F" required {...genderBindings} />
                 </div>
                 <label>Country</label>
                 <select required  {...countryBindings}>

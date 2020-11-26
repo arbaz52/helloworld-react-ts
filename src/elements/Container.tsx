@@ -9,11 +9,11 @@ export const Container = styled.div`
 `
 
 export const NavigationButton = styled.button`
-    padding: 8px 16px;
+    padding: 12px 16px;
     border: 0;
     background: #8e44ad;
     color: white;
-    border-radius: 30px;
+    border-radius: 4px;
     box-shadow: 0 0 10px #ccc;
 `
 
@@ -30,4 +30,9 @@ export const Centered = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 48px;
+`
+
+
+export const Error = styled.div`
+    color: red;
 `

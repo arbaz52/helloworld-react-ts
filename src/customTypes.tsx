@@ -5,12 +5,14 @@ export interface Person {
   phone: string;
   gender: string;
   country: string;
+  id?: string;
 }
 
 
 export interface PeopleContextInterface {
   people: Person[];
-  addPerson: (person: Person) => void;
-  updatePerson: (id: number, person: Person) => void;
-  deletePerson: (id: number) => void;
+  addPerson: (person: Person) => Promise<any>;
+  updatePerson: (id: number, person: Person) => Promise<any>;
+  deletePerson: (id: number) => Promise<any>;
+  [key: string]: any;
 }
