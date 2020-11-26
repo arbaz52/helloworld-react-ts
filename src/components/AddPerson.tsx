@@ -1,18 +1,20 @@
-import { useNavigate, useParams } from '@reach/router';
+import { useMutation } from '@apollo/client';
+import { useNavigate } from '@reach/router';
 import React, { useContext } from 'react';
-import { PeopleContext } from '../App';
 import { Person } from '../customTypes';
 import { Container } from '../elements/Container';
+import { PeopleContext } from '../graphql/ContextProvider';
+import { addUser } from '../graphql/mutations';
 import UserInfoForm from './UserInfoForm';
 const AddPerson = () => {
     const navigate = useNavigate()
     const { addPerson } = useContext(PeopleContext);
 
 
-
     const handleFormSubmission = (person: Person) => {
-        addPerson(person)
-        navigate("/")
+        addPerson(person).then(() => {
+            navigate("/")
+        })
     }
     const initialValues: Person = {
         name: "",

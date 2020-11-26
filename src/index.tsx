@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import GraphQLPeopleProvider from './graphql/GraphQLPeopleProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GraphQLPeopleProvider><App /></GraphQLPeopleProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
