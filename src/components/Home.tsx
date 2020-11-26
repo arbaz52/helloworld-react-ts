@@ -1,16 +1,14 @@
 import { useNavigate } from '@reach/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Person } from '../customTypes';
 import { Container, Error, NavigationButton, Plate } from '../elements/Container';
 import { Table, DeleteButton, EditButton } from '../elements/Table';
 import { FiEdit } from 'react-icons/fi'
 import { TiDeleteOutline } from 'react-icons/ti'
-import { useMutation, useQuery } from '@apollo/client';
-import { fetchUsers } from '../graphql/queries';
-import { deleteUser } from '../graphql/mutations';
 import { PeopleContext } from '../graphql/ContextProvider';
 const Home = () => {
     const { loading, data, error, deletePerson } = useContext(PeopleContext)
+
     const navigate = useNavigate()
 
     const _deletePerson = (_person: Person) => {

@@ -1,10 +1,8 @@
-import { useMutation } from '@apollo/client';
 import { useNavigate } from '@reach/router';
 import React, { useContext } from 'react';
 import { Person } from '../customTypes';
 import { Container } from '../elements/Container';
 import { PeopleContext } from '../graphql/ContextProvider';
-import { addUser } from '../graphql/mutations';
 import UserInfoForm from './UserInfoForm';
 const AddPerson = () => {
     const navigate = useNavigate()
