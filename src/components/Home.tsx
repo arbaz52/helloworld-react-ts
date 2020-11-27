@@ -5,6 +5,7 @@ import { Container, Error, NavigationButton, Plate } from '../elements/Container
 import { Table, DeleteButton, EditButton } from '../elements/Table';
 import { FiEdit } from 'react-icons/fi'
 import { TiDeleteOutline } from 'react-icons/ti'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { PeopleContext } from '../graphql/ContextProvider';
 const Home = () => {
     const { loading, data, error, deletePerson } = useContext(PeopleContext)
@@ -24,7 +25,7 @@ const Home = () => {
         <Container>
             <Plate>
                 <h1>Homescreen</h1>
-                <NavigationButton onClick={() => navigate("/add")}>Add a new Person</NavigationButton>
+                <NavigationButton onClick={() => navigate("/add")}><AiOutlinePlusCircle color="white" /> <span>Person</span></NavigationButton>
             </Plate>
             {loading ? (
                 <h2>Please wait, loading users</h2>

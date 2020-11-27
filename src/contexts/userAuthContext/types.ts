@@ -1,2 +1,5 @@
-export const LOGIN = "LOGIN"
+export const LOGIN_LOADING = "LOGIN_LOADING"
+export const LOGIN_SUCCESSFUL = "LOGIN_SUCCESSFUL"
+export const LOGIN_FAILED = "LOGIN_FAILED"
 export const LOGOUT = "LOGOUT"
+export const INIT_FROM_LOCAL = "INIT_FROM_LOCAL"

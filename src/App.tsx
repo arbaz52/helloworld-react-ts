@@ -1,13 +1,15 @@
-import { Link, Router } from "@reach/router";
+import { Router } from "@reach/router";
 import React from "react";
 import AddPerson from "./components/AddPerson";
 import EditPerson from "./components/EditPerson";
 import Home from "./components/Home";
 import Login from "./components/screens/Login";
-import { Container, NavigationLink, Plate } from "./elements/Container";
+import { Container, Plate } from "./elements/Container";
 import { Header } from "./elements/Header";
 import PeopleContextProvider from "./graphql/ContextProvider";
 import { RouterPage } from "./utils";
+
+import Nav from "./components/Nav";
 
 function App() {
   console.log("Component: App = render");
@@ -18,11 +20,7 @@ function App() {
         <Container>
           <Plate>
             <b>Welcome to peoplebase.</b>
-            <div>
-              <NavigationLink to="/">Home</NavigationLink>
-              <NavigationLink to="/add">Add a Person</NavigationLink>
-              <NavigationLink to="/login">Login</NavigationLink>
-            </div>
+            <Nav/>
           </Plate>
         </Container>
       </Header>

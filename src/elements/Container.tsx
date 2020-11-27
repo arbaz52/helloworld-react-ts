@@ -1,5 +1,6 @@
 import { Link } from "@reach/router";
 import styled from "styled-components";
+import breakpoints from './index'
 
 export const Container = styled.div`
     padding: 8px 16px;
@@ -16,11 +17,17 @@ export const NavigationButton = styled.button`
     color: white;
     border-radius: 4px;
     box-shadow: 0 0 10px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 `
 
 
 export const NavigationLink = styled(Link)`
     color: #2980b9;
+    padding-left: 8px;
+    padding-right: 8px;
     font-size: 0.9em;
 `
 
@@ -29,6 +36,10 @@ export const Plate = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 48px;
+
+    @media only screen and ${breakpoints.device.sm} {
+        flex-wrap: wrap;
+    }
 `
 
 export const Centered = styled.div`
