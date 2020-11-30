@@ -7,6 +7,7 @@ import { FiEdit } from 'react-icons/fi'
 import { TiDeleteOutline } from 'react-icons/ti'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { PeopleContext } from '../graphql/ContextProvider';
+
 const Home = () => {
     const { loading, data, error, deletePerson } = useContext(PeopleContext)
 

@@ -5,7 +5,7 @@ import { NavigationLink } from "../elements/Container";
 import { UserAuthContext } from "../contexts/userAuthContext/provider";
 
 const Nav = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const { isLoggedIn, logout } = useContext(UserAuthContext);
   const toggle = () => setVisible(!visible);
   return (
@@ -16,6 +16,7 @@ const Nav = () => {
       {visible && (
         <NavBar>
           <NavigationLink onClick={toggle} to="/">Home</NavigationLink>
+          <NavigationLink onClick={toggle} to="/antd">Ant Designs</NavigationLink>
           <NavigationLink onClick={toggle} to="/add">Add a Person</NavigationLink>
           {!isLoggedIn ? (
             <NavigationLink onClick={toggle} to="/login">Login</NavigationLink>
