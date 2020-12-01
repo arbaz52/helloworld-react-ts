@@ -54,3 +54,7 @@ export const Centered = styled.div`
 export const Error = styled.div`
     color: red;
 `
+
+export const Section = styled.section`
+    margin: 24px 0;
+`
